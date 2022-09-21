@@ -1,7 +1,7 @@
 # CSA-Savior
-Collection of CodeHS / CSA answers and guides
+Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 
-[CodeHS](https://codehs.com)
+All code in repository passes all test cases before being uploaded. Excuse poor variable names or messy code in general.
 
 ## More Soon TM
-Test commi
+Nagigation tables soon.
