@@ -5,3 +5,4 @@ All code in repository passes all test cases before being uploaded. Excuse poor 
 
 ## More Soon TM
 Nagigation tables soon.
+
