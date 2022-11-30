@@ -1,7 +1,7 @@
 # CSA-Savior
 Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 
-> All code in repository passes required test cases before being uploaded. Change variable names / dont copy paste directly. I'm happy to explain anything, just ask!
+> All code in repository passes required test cases before being uploaded. Try to understand the answers rather than just copy and I'm happy to explain anything!
 
  ~ Washi#1337
 
@@ -15,6 +15,7 @@ Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 | [Unit 4 Iteration](https://github.com/Washiil/CSA-Savior/tree/main/Unit%204%20Iteration) |
 | [Unit 5 Writing Classes](https://github.com/Washiil/CSA-Savior/tree/main/Unit%205%20Writing%20Classes) |
 | [Unit 6 Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%206%20Arrays) |
+| [Unit 7 ArrayList](https://github.com/Washiil/CSA-Savior/tree/main/Unit%207%20ArrayList) |
 
 # ToDo
 * Short term
