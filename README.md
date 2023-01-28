@@ -16,11 +16,4 @@ Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 | [Unit 5 Writing Classes](https://github.com/Washiil/CSA-Savior/tree/main/Unit%205%20Writing%20Classes) |
 | [Unit 6 Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%206%20Arrays) |
 | [Unit 7 ArrayList](https://github.com/Washiil/CSA-Savior/tree/main/Unit%207%20ArrayList) |
-
-# ToDo
-* Short term
-	* Guides / Summaries?
-	* Unit 7
-	* Better Navigation
-* Longterm
-	* Website
+| [Unit 8 2D Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%208%202D%20Array) |
