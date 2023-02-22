@@ -17,3 +17,4 @@ Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 | [Unit 6 Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%206%20Arrays) |
 | [Unit 7 ArrayList](https://github.com/Washiil/CSA-Savior/tree/main/Unit%207%20ArrayList) |
 | [Unit 8 2D Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%208%202D%20Array) |
+| [Unit 9 Inheritance](https://github.com/Washiil/CSA-Savior/tree/main/Unit%209%20Inheritance) |
