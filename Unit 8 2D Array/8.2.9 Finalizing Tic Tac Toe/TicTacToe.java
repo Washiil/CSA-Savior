@@ -52,12 +52,13 @@ public class TicTacToe
        if(turn % 2 == 0)
        {
            this.board[row][col] = "X";
+           this.turn++;
        }
        else
        {
            this.board[row][col] = "O";
+           this.turn--;
        }
-       this.turn++;
    }
    
    //This method returns a boolean that returns true if a row has three X or O's in a row
@@ -92,6 +93,7 @@ public class TicTacToe
     //This method returns a boolean that returns true if either diagonal has three X or O's
    public boolean checkDiag()
    {
+        if(board[1][1].equals("-")) return false;
         if(board[0][0].equals("O") || board[0][0].equals("X"))
         {
             if(board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2]))
