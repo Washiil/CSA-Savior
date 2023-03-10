@@ -3,7 +3,7 @@ Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 
 > All code in repository passes required test cases before being uploaded. Try to understand the answers rather than just copy and I'm happy to explain anything!
 
- ~ Washi#1337
+ ~ Washi#8795
 
 # Navigation
 
