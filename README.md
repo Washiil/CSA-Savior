@@ -1,9 +1,11 @@
 # CSA-Savior
 Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 
+This repository is now archived as of 01-07-2023. If this repository helps you out please leave a star.
+
 > All code in repository passes required test cases before being uploaded. Try to understand the answers rather than just copy and I'm happy to explain anything!
 
- ~ Washi#8795
+ ~ Washi._
 
 # Navigation
 
@@ -18,3 +20,9 @@ Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 | [Unit 7 ArrayList](https://github.com/Washiil/CSA-Savior/tree/main/Unit%207%20ArrayList) |
 | [Unit 8 2D Array](https://github.com/Washiil/CSA-Savior/tree/main/Unit%208%202D%20Array) |
 | [Unit 9 Inheritance](https://github.com/Washiil/CSA-Savior/tree/main/Unit%209%20Inheritance) |
+| [Unit 10 Recursion](https://github.com/Washiil/CSA-Savior/tree/main/Unit%2010%20Recursion) |
+
+<br><br>
+## Thank you and good luck future students!
+
+![ALT TEXT](./goal.png)
