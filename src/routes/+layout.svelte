@@ -1,15 +1,16 @@
 
 <script lang="ts">
-
   import "../app.pcss";
+  import { writable } from "svelte/store";
   import { Separator } from "$lib/components/ui/separator";
   import * as Select from "$lib/components/ui/select";
+  import * as Accordion from "$lib/components/ui/accordion";
   import { onMount } from "svelte";
   import { buttonVariants } from "$lib/components/ui/button";
 
   let data: { value: string, label: string }[] = [];
-  let units: { values: string, label: string}[] = [];
-  const current_structure = new Map<string, FileEntry[]>();
+  const dynamic_file_structure = writable(new Map<string, FileEntry[]>());
+
   let selected_url = '';
   let current_path = 'None';
 
@@ -38,25 +39,30 @@
   }
 
   async function fetch_files(url: string) {
-    current_structure.clear();
+    dynamic_file_structure.set(new Map());
+    let new_structure = new Map<string, FileEntry[]>();
     try {
-      const response = await fetch(url);
+      const response = await fetch(url + "?recursive=0");
       const data: { tree: FileEntry[] } = await response.json();
 
       data.tree.forEach(entry => {
         const sections = entry.path.split('/');
         const section = sections[0];
 
-        if (!current_structure.has(section)) {
-          current_structure.set(section, []);
+        if (entry.type === 'blob') {
+          if (!new_structure.has(section)) {
+          new_structure.set(section, []);
+          }
+          
+          new_structure.get(section)!.push(entry);
         }
 
-        current_structure.get(section)!.push(entry);
       });
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-    console.log(current_structure);
+    console.log(new_structure);
+    dynamic_file_structure.set(new_structure);
   }
 
   onMount(fetch_units);
@@ -89,20 +95,19 @@
       <Separator class='my-2'/>
 
       <div>
-        {#each Array.from(current_structure) as [section, entries]}
-        {() => {console.log('hello world')}}
-        <h1>TEST</h1>
-          <section>
-            <h2>{section}</h2>
-            <ul>
-              {#each entries as entry}
-                <li>{entry.path}</li>
-              {/each}
-            </ul>
-          </section>
-        {/each}
-        {#each current_structure as unit}
-          <h1>h1</h1>
+        {#each $dynamic_file_structure as [section, entries]}
+          <Accordion.Root>
+            <Accordion.Item value="item-1">
+              <Accordion.Trigger>{section}</Accordion.Trigger>
+              <Accordion.Content>
+                <ul>
+                  {#each entries as entry}
+                    <li>{entry.path.replace(/^\d+\.\d+\//, '')}</li>
+                  {/each}
+                </ul>
+              </Accordion.Content>
+            </Accordion.Item>
+          </Accordion.Root>
         {/each}
       </div>
     </div>
