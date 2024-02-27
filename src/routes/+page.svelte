@@ -1,4 +1,11 @@
 
+<svelte:head>
+  <title>CSA-Savior</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Index of all CodeHS Java answers.">
+  {@html onedark}
+</svelte:head>
+
 <script lang="ts">
   import "../app.pcss";
   import { writable } from "svelte/store";
@@ -94,10 +101,6 @@
 
   onMount(fetch_units);
 </script>
-
-<svelte:head>
-  {@html onedark}
-</svelte:head>
 
 <style>
   .scrollbar-hide::-webkit-scrollbar {
