@@ -43,6 +43,14 @@
     encoding: string;
   }
 
+  async function copyToClipboard() {
+    try {
+      await navigator.clipboard.writeText(code);
+    } catch (error) {
+      console.error("Unable to copy text to clipboard:", error);
+    }
+  }
+
   async function fetch_units() {
     try {
       const response = await fetch('https://api.github.com/repos/Washiil/CSA-Savior/git/trees/main');
@@ -165,9 +173,10 @@
       <div class='p-2'>
         <span class='text-2xl font-mono'>
           {current_path}
+          <Button variant="outline" class='absolute top-0 right-0 m-3' on:click={copyToClipboard}>Copy Code</Button>
         </span>
       </div>
-      <div class='flex-grow bg-zinc-900 rounded-md p-1'>
+      <div class='flex-grow bg-zinc-900 rounded-md p-1 relative'>
         <Highlight language={java} {code} let:highlighted>
           <LineNumbers {highlighted} wrapLines />
         </Highlight>
