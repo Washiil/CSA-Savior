@@ -1,38 +1,31 @@
-# create-svelte
+# CSA-Savior Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Was planning to work on this project for quite a while and finally got around to flushing something out that makes sense. Website is entirely made with the `sveltekit` and `svelte`. Additionally I used the svelte port of `shadcn/ui` for many of my components.
 
-## Creating a project
+## The Stack
+<div align="center">
+    <img width="55" src="./assets/svelte-logo.svg"/>
+    <img width="55" src="./assets/tailwind-logo.svg"/>
+    <img width="55" src="./assets/Vitejs-logo.svg"/>
+    <img width="55" src="./assets/typescript-logo.svg"/>
+    <img width="55" src="./assets/postcss-logo.svg"/>
+    <img width="55" src="./assets/ESLint-logo.svg"/>
+    <img width="55" src="./assets/github-logo.svg"/>
+    <img width="55" src="./assets/node-logo.svg"/>
+</div>
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Deployment
+I used the beta of [Github Actions](https://docs.github.com/en/actions) to deploy my site automatically to github pages and generate the static site. This workflow proved to be extremly convienent and is something I will likely implement in the future. 
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Running Locally
+Its extremly simple to build and run locally. Simply clone and then run:
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+```npm install```
 
-## Developing
+```npm run dev```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Notes
+I prioritized as little reloads as possible for the website as I did not see a reason to encourage users to refresh their page often instead opting to simply fetch the data from the github api and refresh the page directly. This made for a much snappier experience. I experiemented with SEO by adding a `sitemap.xml` and `robots.txt` and while these are unecessary for such a small website I saw no reason not to add them.
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Future Plans
+Currently somewhat unknown as I'm not sure what else I would want to implement into the app. It will most likely serve as a template for future note taking / homework solving projects as I continue to study. 
