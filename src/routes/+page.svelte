@@ -122,7 +122,7 @@
   }
 </style>
 
-<div class='flex flex-col h-screen overflow-y-auto w-screen'>
+<div class='flex flex-col h-screen overflow-y-auto w-screen scrollbar-hide'>
   <div class='flex flex-row flex-grow m-1 h-screen'>
     <div class='w-50 p-1 bg-zinc-900 rounded-md max-h-screen overflow-y-auto scrollbar-hide'>
       <span class='container mx-auto text-center font-mono font-bold text-2xl'>
