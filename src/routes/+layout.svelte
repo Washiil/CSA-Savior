@@ -6,10 +6,12 @@
   import * as Select from "$lib/components/ui/select";
   import * as Accordion from "$lib/components/ui/accordion";
   import { onMount } from "svelte";
+  import { Button } from "$lib/components/ui/button";
   import { buttonVariants } from "$lib/components/ui/button";
 
   let data: { value: string, label: string }[] = [];
   const dynamic_file_structure = writable(new Map<string, FileEntry[]>());
+  const csaFileStructure = writable(new Map<string, Map<string, FileEntry[]>>());
 
   let selected_url = '';
   let current_path = 'None';
@@ -38,30 +40,44 @@
     }
   }
 
+
+  // Need to refactor this
   async function fetch_files(url: string) {
     dynamic_file_structure.set(new Map());
     let new_structure = new Map<string, FileEntry[]>();
+    let updated_struct = new Map<string, Map<string, FileEntry[]>>();
     try {
       const response = await fetch(url + "?recursive=0");
       const data: { tree: FileEntry[] } = await response.json();
 
       data.tree.forEach(entry => {
         const sections = entry.path.split('/');
-        const section = sections[0];
-
-        if (entry.type === 'blob') {
-          if (!new_structure.has(section)) {
-          new_structure.set(section, []);
-          }
-          
-          new_structure.get(section)!.push(entry);
+        if (sections.length === 1) {
+          if (!updated_struct.has(sections[0])) updated_struct.set(sections[0], new Map<string, FileEntry[]>());
+        }
+        if (sections.length === 2) {
+          if (updated_struct.has(sections[0])) updated_struct.get(sections[0])!.set(sections[1], []);
+        }
+        if (sections.length === 3) {
+          if (updated_struct.has(sections[0])) {
+            if (updated_struct.get(sections[0])!.has(sections[1])) {
+              updated_struct.get(sections[0])!.get(sections[1])!.push(entry);
+            }
+          };
         }
 
+        if (entry.type === 'blob') {
+          if (!new_structure.has(sections[0])) {
+            new_structure.set(sections[0], []);
+          }
+          
+          new_structure.get(sections[0])!.push(entry);
+        }
       });
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-    console.log(new_structure);
+    csaFileStructure.set(updated_struct);
     dynamic_file_structure.set(new_structure);
   }
 
@@ -95,16 +111,18 @@
       <Separator class='my-2'/>
 
       <div>
-        {#each $dynamic_file_structure as [section, entries]}
+        {#each $csaFileStructure as [chapter, units]}
           <Accordion.Root>
-            <Accordion.Item value="item-1">
-              <Accordion.Trigger>{section}</Accordion.Trigger>
+            <Accordion.Item value="{chapter}">
+              <Accordion.Trigger>{chapter}</Accordion.Trigger>
               <Accordion.Content>
-                <ul>
-                  {#each entries as entry}
-                    <li>{entry.path.replace(/^\d+\.\d+\//, '')}</li>
+                {#each units as unit}
+                  <h2 class='font-bold'>{unit[0]}</h2>
+                  {#each unit[1] as file}
+                    <Button variant='link'>{file.path.split('/').slice(-1)}</Button>
                   {/each}
-                </ul>
+                  <Separator class='my-2'/>
+                {/each}
               </Accordion.Content>
             </Accordion.Item>
           </Accordion.Root>
