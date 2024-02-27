@@ -1,7 +1,7 @@
-# CSA-Savior
+# CSA-Savior - [NEW WEBSITE](https://washiil.github.io/CSA-Savior/)
 Collection of [CodeHS](https://codehs.com) / CSA answers and guides
 
-This repository is now archived as of 01-07-2023. If this repository helps you out please leave a star.
+~~This repository is now archived as of 01-07-2023. If this repository helps you out please leave a star.~~
 
 > All code in repository passes required test cases before being uploaded. Try to understand the answers rather than just copy and I'm happy to explain anything!
 
