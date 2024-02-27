@@ -99,9 +99,21 @@
   {@html onedark}
 </svelte:head>
 
-<div class='flex flex-col h-screen w-screen'>
-  <div class='flex flex-row flex-grow p-1'>
-    <div class='w-50 p-1 bg-zinc-900 rounded-md'>
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+</style>
+
+<div class='flex flex-col h-screen overflow-y-auto w-screen'>
+  <div class='flex flex-row flex-grow m-1 h-screen'>
+    <div class='w-50 p-1 bg-zinc-900 rounded-md max-h-screen overflow-y-auto scrollbar-hide'>
       <span class='container mx-auto text-center font-mono font-bold text-2xl'>
         CSA Savior
       </span>
@@ -146,7 +158,7 @@
         {/each}
       </div>
     </div>
-    <div class='m-1 flex flex-col flex-grow'>
+    <div class='w-50 p-1 flex flex-col flex-grow max-h-screen overflow-y-auto scrollbar-hide'>
       <div class='p-2'>
         <span class='text-2xl font-mono'>
           {current_path}
