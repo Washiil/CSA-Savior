@@ -21,9 +21,9 @@
 
   let data: { value: string, label: string }[] = [];
   const csaFileStructure = writable(new Map<string, Map<string, FileEntry[]>>());
-  let code = `System.out.println("Hello, World!");\nSystem.out.println("Default values are fun!");`;
+  let code = ``;
 
-  let current_path = 'None';
+  let current_path = 'Info.md';
 
   interface FileEntry {
     path: string;
@@ -176,11 +176,30 @@
           <Button variant="outline" class='absolute top-0 right-0 m-3' on:click={copyToClipboard}>Copy Code</Button>
         </span>
       </div>
-      <div class='flex-grow bg-zinc-900 rounded-md p-1 relative'>
-        <Highlight language={java} {code} let:highlighted>
-          <LineNumbers {highlighted} wrapLines />
-        </Highlight>
-      </div>
+      {#if code.length > 0}
+        <div class='bg-zinc-900 rounded-md p-1 relative'>
+          <Highlight language={java} {code} let:highlighted>
+            <LineNumbers {highlighted} wrapLines />
+          </Highlight>
+        </div>
+      {:else}
+        <div class='flex-grow bg-zinc-900 rounded-md p-1 flex relative justify-center items-center'>
+          <div class='p-5 font-mono justify-center'>
+            <h1 class='text-3xl'>Welcome to CSA-Savior</h1>
+            <h2>Select a unit from the sidebar and then use the dropdowns to select the files you want to view!</h2>
+            <Separator class='m-5'/>
+            <h2>
+              Please consider leaving a star on the <a href=https://github.com/Washiil/CSA-Savior class='underline'>repository</a>
+            </h2>
+            <h2 class="text-right">
+              Made with love
+            </h2>
+            <h2 class="text-right">
+              ❤️ Washi
+            </h2>
+          </div>
+        </div>
+      {/if}
     </div>
   </div>
 </div>

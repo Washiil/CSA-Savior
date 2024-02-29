@@ -29,3 +29,7 @@ I prioritized as little reloads as possible for the website as I did not see a r
 
 ## Future Plans
 Currently somewhat unknown as I'm not sure what else I would want to implement into the app. It will most likely serve as a template for future note taking / homework solving projects as I continue to study. 
+
+## Special Mentions
+- [CodeHS](https://codehs.com/) for providing free classes that are amazing to any prospective computer science student.
+- [Favicon](https://www.flaticon.com/free-icons/code) by Smashicons
