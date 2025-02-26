@@ -13,10 +13,10 @@ export default function Home() {
         numberOfWaves={4}
         minHeight={500}
         maxHeight={3000}
-        className="w-screen h-screen absolute left-0 bottom-0 overflow-hidden"
+        className="w-screen h-screen absolute left-0 bottom-0 overflow-hidden -z-10"
       />
       
-      <div className="m-1 transition-all backdrop-blur-xl duration-700  max-w-sm md:max-w-md lg:max-w-3xl mt-28 text-white w-fit h-fit rounded-2xl p-8">
+      <div className="ml-14 transition-all backdrop-blur-xl duration-700 w-[95%] mt-14 text-white rounded-2xl p-8">
         <h1 className="transition-all duration-500 font-mono text-4xl md:text-6xl font-bold">CSA-Savior</h1>
         <br/>
         <p className="text-lg">
@@ -34,12 +34,12 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </div>
 
-        <div className="flex mt-3 justify-center font-mono pt-12">
-          <button className="mt-3 text-3xl transition-all duration-700 outline-1 outline outline-black bg-white text-black rounded-lg text-md py-2 px-4 hover:scale-[115%]">
-            Start Here→
-          </button>
-        </div>
+      <div className="flex mt-10 justify-center font-mono pt-12">
+        <Link href="/" className="mt-3 text-3xl transition-all duration-700 outline-1 outline outline-black bg-white text-black rounded-lg text-md py-2 px-4 hover:scale-[115%]">
+          Start Here→
+        </Link>
       </div>
     </div>
   );
