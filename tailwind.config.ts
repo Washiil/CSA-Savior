@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      mono: ['"Source Code Pro"', 'monospace'],
+    }
   },
   plugins: [],
 } satisfies Config;
