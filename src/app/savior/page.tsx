@@ -44,12 +44,11 @@ export default function Savior() {
 
                 <UnitSelector />
                 <FileTree />
-
               </div>
               <div className="w-[1px] sm:h-full bg-zinc-600/70" />
-                <div className="p-2 w-full sm:w-2/3 h-full overflow-y-auto">
-                  <CodeViewer />
-                </div>
+              <div className="p-2 w-full sm:w-2/3 h-full overflow-y-auto">
+                <CodeViewer />
+              </div>
             </div>
           </div>
         </div>

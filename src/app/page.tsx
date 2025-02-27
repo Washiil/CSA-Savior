@@ -22,8 +22,8 @@ export default function Home() {
         <br />
 
         <p className="text-lg text-zinc-400">
-          Welcome or welcome back. It&apos;s the site you know and love just with a
-          brand new web interface!
+          Welcome or welcome back. It&apos;s the site you know and love just
+          with a brand new web interface!
         </p>
 
         {/* Button Bar*/}

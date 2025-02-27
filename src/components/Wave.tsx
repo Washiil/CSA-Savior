@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface WaveProps {
   width?: number;
@@ -74,10 +74,10 @@ const Wave: React.FC<WaveProps> = ({
     // Make each successive wave more transparent
     return 1 - index * (0.7 / numberOfWaves);
   };
-  
+
   useEffect(() => {
-    const newPaths = Array.from({ length: numberOfWaves }, (_, i) => 
-      generateRandomWavePath(i)
+    const newPaths = Array.from({ length: numberOfWaves }, (_, i) =>
+      generateRandomWavePath(i),
     );
     setPaths(newPaths);
   }, []);
@@ -92,22 +92,22 @@ const Wave: React.FC<WaveProps> = ({
         className="w-full h-full transition-all duration-1000 hover:opacity-90"
       >
         {paths.map((path, index) => (
-            <path
-              key={index}
-              d={path}
-              fill={fill}
-              opacity={getOpacity(index)}
-              className="transition-all duration-300"
-            >
-              <animate
-                attributeName="d"
-                values={`${path};${generateRandomWavePath(index)};${path}`}
-                dur={`${animationDuration + index * 2}s`}
-                repeatCount="indefinite"
-              />
-            </path>
-          )
-        )};
+          <path
+            key={index}
+            d={path}
+            fill={fill}
+            opacity={getOpacity(index)}
+            className="transition-all duration-300"
+          >
+            <animate
+              attributeName="d"
+              values={`${path};${generateRandomWavePath(index)};${path}`}
+              dur={`${animationDuration + index * 2}s`}
+              repeatCount="indefinite"
+            />
+          </path>
+        ))}
+        ;
       </svg>
     </div>
   );

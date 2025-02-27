@@ -8,7 +8,7 @@ export default function CodeViewer() {
   const { currentFile } = useRepo();
   const [copied, setCopied] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState(1000);
-  
+
   // Reset copied state after 2 seconds
   useEffect(() => {
     if (copied) {
@@ -24,14 +24,14 @@ export default function CodeViewer() {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(currentFile.content);
@@ -40,7 +40,7 @@ export default function CodeViewer() {
       console.error("Unable to copy text to clipboard:", error);
     }
   };
-  
+
   // Determine language for syntax highlighting
   const getLanguage = (): string => {
     const extension = currentFile.path.split(".").pop()?.toLowerCase();
@@ -48,21 +48,30 @@ export default function CodeViewer() {
     if (extension === "md") return "markdown";
     return "java"; // Default to Java
   };
-  
+
   return (
     <div className="flex flex-col h-full w-full">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-mono truncate">
-          {currentFile.path.split('/').map((section) => {
-            if(section.indexOf('java') != -1) {
+          {currentFile.path.split("/").map((section) => {
+            if (section.indexOf("java") != -1) {
               return (
-                <span key={section} className="transition-all duration-500 hover:text-purple-600">{section}</span>
-              )
-            }
-            else {
+                <span
+                  key={section}
+                  className="transition-all duration-500 hover:text-purple-600"
+                >
+                  {section}
+                </span>
+              );
+            } else {
               return (
-                <span key={section} className="transition-all duration-500 hover:text-purple-600">{section}/</span>
-              )
+                <span
+                  key={section}
+                  className="transition-all duration-500 hover:text-purple-600"
+                >
+                  {section}/
+                </span>
+              );
             }
           })}
         </h2>
@@ -86,7 +95,7 @@ export default function CodeViewer() {
               borderRadius: "6px",
               background: "#18181b",
               width: "max-content",
-              maxWidth: "none"
+              maxWidth: "none",
             }}
           >
             {currentFile.content}
