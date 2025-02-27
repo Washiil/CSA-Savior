@@ -65,7 +65,7 @@ export default function FileTree() {
           </button>
 
           {expandedChapters.has(chapter) && (
-            <div className="transition-all ml-2 outline outline-1 rounded-2xl outline-zinc-600/70 mt-2 p-2">
+            <div className="transition-all sm:ml-2 outline outline-1 rounded-2xl outline-zinc-600/70 mt-2 p-2">
               {Array.from(units.entries()).map(([unit, files]) => (
                 <div key={unit} className="mb-2">
                   <button
@@ -83,7 +83,7 @@ export default function FileTree() {
                       {files.map((file: FileEntry) => (
                         <button
                           key={file.path}
-                          className="transition-all duration-500 w-full text-left p-1 text-white hover:underline hover:translate-x-2"
+                          className="transition-all duration-500 w-full text-left p-1 text-white hover:underline sm:hover:translate-x-2"
                           onClick={() => handleFileClick(file)}
                         >
                           {file.path.split("/").pop()}
