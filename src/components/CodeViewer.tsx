@@ -49,7 +49,7 @@ export default function CodeViewer() {
         </button>
       </div>
 
-      <div className="flex-1 bg-zinc-900 rounded-md p-1 mt-2 overflow-y-auto scrollbar-hide">
+      <div className="flex-1 bg-zinc-900 rounded-md p-1 mt-2 overflow-y-auto overflow-x-auto">
         <SyntaxHighlighter
           language={getLanguage()}
           style={atomOneDark}

@@ -25,7 +25,7 @@ export default function Savior() {
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-[98%] h-[98%] backdrop-blur-xl outline-1 outline outline-zinc-600/70 rounded-2xl">
             <div className="flex h-full">
-              <div className="flex flex-col px-4 w-1/3 overflow-y-auto">
+              <div className="flex flex-col px-4 w-1/3 overflow-y-auto min-w-96">
                 <h1 className="text-3xl font-mono py-6 w-full text-center font-bold">
                   CSA-Savior
                 </h1>
@@ -36,7 +36,7 @@ export default function Savior() {
               <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-white to-transparent" />
 
               <div className="p-5 w-full h-full flex flex-col">
-                <div className="w-full h-full overflow-y-auto no-scrollbar">
+                <div className="w-full h-full overflow-y-auto overflow-x-auto">
                   <CodeViewer />
                 </div>
               </div>
