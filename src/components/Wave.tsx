@@ -29,7 +29,7 @@ const Wave: React.FC<WaveProps> = ({
     const segmentWidth = width / segments;
 
     // Generate random heights for the control points
-    let points = [];
+    const points = [];
     for (let i = 0; i <= segments; i++) {
       const x = i * segmentWidth;
 

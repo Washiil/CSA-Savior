@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Wave from "../components/Wave";
 import Link from "next/link";
 
@@ -23,7 +22,7 @@ export default function Home() {
         <br />
 
         <p className="text-lg text-zinc-400">
-          Welcome or welcome back. It's the site you know and love just with a
+          Welcome or welcome back. It&apos;s the site you know and love just with a
           brand new web interface!
         </p>
 

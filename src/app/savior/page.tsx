@@ -6,7 +6,6 @@ import FileTree from "@/components/FileTree";
 import CodeViewer from "@/components/CodeViewer";
 
 import Wave from "../../components/Wave";
-import { fetchFileContent } from "@/lib/githubAPI";
 
 export default function Savior() {
   return (
@@ -48,4 +47,3 @@ export default function Savior() {
     </RepoProvider>
   );
 }
-

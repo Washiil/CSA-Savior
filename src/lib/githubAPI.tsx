@@ -46,7 +46,7 @@ export async function fetchUnits(): Promise<Unit[]> {
 export async function fetchFiles(
   url: string,
 ): Promise<Map<string, Map<string, FileEntry[]>>> {
-  let fileStructure = new Map<string, Map<string, FileEntry[]>>();
+  const fileStructure = new Map<string, Map<string, FileEntry[]>>();
 
   try {
     const response = await fetch(`${url}?recursive=0`);
