@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 interface WaveProps {
   width?: number;
@@ -14,12 +14,12 @@ interface WaveProps {
 const Wave: React.FC<WaveProps> = ({
   width = 1000,
   stretch = 1, // Higher values = smoother waves
-  fill = '#3B82F6',
+  fill = "#3B82F6",
   animationDuration = 15,
   numberOfWaves = 3,
   minHeight = 20,
   maxHeight = 50,
-  className = '',
+  className = "",
 }) => {
   const generateRandomWavePath = (index: number): string => {
     // Adjust number of segments based on stretch factor
@@ -27,57 +27,57 @@ const Wave: React.FC<WaveProps> = ({
     const height = 9000;
     const segments = stretch;
     const segmentWidth = width / segments;
-    
+
     // Generate random heights for the control points
     let points = [];
     for (let i = 0; i <= segments; i++) {
       const x = i * segmentWidth;
-      
+
       // Use different random heights based on wave index for variation
-      const waveHeightFactor = 0.7 + (index * 0.15);
-      const randomHeight = 
+      const waveHeightFactor = 0.7 + index * 0.15;
+      const randomHeight =
         minHeight + Math.random() * (maxHeight - minHeight) * waveHeightFactor;
-      
+
       points.push({ x, y: randomHeight });
     }
-    
+
     // Build the SVG path
     let path = `M 0 ${height} L 0 ${height - points[0].y}`;
-    
+
     for (let i = 0; i < segments; i++) {
-      const cpDistance = (segmentWidth / 3);
-      
+      const cpDistance = segmentWidth / 3;
+
       const cp1x = Math.min(points[i].x + cpDistance, points[i + 1].x);
       const cp1y = height - points[i].y;
-      
+
       const cp2x = Math.max(points[i + 1].x - cpDistance, points[i].x);
       const cp2y = height - points[i + 1].y;
-      
+
       const x = points[i + 1].x;
       const y = height - points[i + 1].y;
-      
+
       path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x} ${y}`;
     }
-    
+
     path += ` L ${width} ${height} Z`;
     return path;
   };
 
-  const paths = Array.from({ length: numberOfWaves }, (_, i) => 
-    generateRandomWavePath(i)
+  const paths = Array.from({ length: numberOfWaves }, (_, i) =>
+    generateRandomWavePath(i),
   );
 
   const getOpacity = (index: number) => {
     // Make each successive wave more transparent
-    return 1 - (index * (0.7 / numberOfWaves));
+    return 1 - index * (0.7 / numberOfWaves);
   };
 
   return (
     <div className={`${className}`}>
-      <svg 
-        width="100%" 
-        height="100%" 
-        preserveAspectRatio="none" 
+      <svg
+        width="100%"
+        height="100%"
+        preserveAspectRatio="none"
         viewBox={`0 0 ${width} 9000`}
         className="w-full h-full transition-all duration-1000 hover:opacity-90"
       >

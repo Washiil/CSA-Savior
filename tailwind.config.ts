@@ -14,8 +14,8 @@ export default {
       },
     },
     fontFamily: {
-      mono: ['"Source Code Pro"', 'monospace'],
-    }
+      mono: ['"Source Code Pro"', "monospace"],
+    },
   },
   plugins: [],
 } satisfies Config;
