@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    // Need to redo the wave class
+    // Need to redo the wave class a
     <div className="flex flex-col h-screen w-screen items-center bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <Wave
         stretch={3}
