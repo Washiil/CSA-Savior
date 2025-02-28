@@ -11,6 +11,12 @@ export default function UnitSelector() {
   useEffect(() => {
     const loadUnits = async () => {
       const data = await fetchUnits();
+      data.sort((a, b) => {
+        const numA = parseInt(a["label"].split(" ")[1]);
+        const numB = parseInt(b["label"].split(" ")[1]);
+        return numA - numB;
+      });
+
       setUnits(data);
     };
 
