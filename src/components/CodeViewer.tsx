@@ -14,7 +14,7 @@ export default function CodeViewer() {
     if (copied) {
       const timeout = setTimeout(() => {
         setCopied(false);
-      }, 2000);
+      }, 1000);
       return () => clearTimeout(timeout);
     }
   }, [copied]);
@@ -51,6 +51,12 @@ export default function CodeViewer() {
 
   return (
     <div className="flex flex-col h-full w-full">
+        <button
+          onClick={copyToClipboard}
+          className="transition-all duration-500 sm:absolute right-0 bottom-0 m-8 px-4 py-2 bg-zinc-300 text-black rounded-md hover:bg-purple-600 flex-shrink-0 ml-2 hover:scale-110 hover:-translate-y-2"
+        >
+          {copied ? "Copied!" : "Copy Code"}
+        </button>
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-mono truncate">
           {currentFile.path.split("/").map((section) => {
@@ -75,12 +81,6 @@ export default function CodeViewer() {
             }
           })}
         </h2>
-        <button
-          onClick={copyToClipboard}
-          className="px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-zinc-700 transition flex-shrink-0 ml-2"
-        >
-          {copied ? "Copied!" : "Copy Code"}
-        </button>
       </div>
       <div className="flex-1 bg-zinc-900 rounded-md p-1 mt-2 w-full max-w-full">
         <div className="overflow-x-auto w-full max-w-full">
