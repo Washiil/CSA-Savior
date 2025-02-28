@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Wave from "@/components/Wave";
-import PageTransition from '@/components/PageTransition';
+import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {

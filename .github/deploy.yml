@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'website-rewrite'
+    branches: "website-rewrite"
 
 jobs:
   build_site:
@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/CSA-Savior'
+          BASE_PATH: "/CSA-Savior"
         run: |
           npm run build
           touch build/.nojekyll
@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: "build/"
 
   deploy:
     needs: build_site
@@ -50,7 +50,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - name: Deploy
         id: deployment

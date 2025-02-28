@@ -7,7 +7,10 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <Head>
         <title>CSA-Savior</title>
-        <meta name="description" content="This is the description for my specific page." />
+        <meta
+          name="description"
+          content="This is the description for my specific page."
+        />
       </Head>
       <div className="mx-14 transition-all backdrop-blur-xl duration-700 w-[95%] my-14 text-white rounded-2xl p-8">
         <h1 className="transition-all duration-500 font-mono text-4xl md:text-6xl font-bold">
