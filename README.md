@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CSA-Savior Website
 
-## Getting Started
+Was planning to work on this project for quite a while and finally got around to flushing something out that makes sense. Website is entirely made with the `sveltekit` and `svelte`. Additionally I used the svelte port of `shadcn/ui` for many of my components.
 
-First, run the development server:
+## The Stack
+<div align="center">
+    <img width="55" src="./assets/svelte-logo.svg"/>
+    <img width="55" src="./assets/tailwind-logo.svg"/>
+    <img width="55" src="./assets/Vitejs-logo.svg"/>
+    <img width="55" src="./assets/typescript-logo.svg"/>
+    <img width="55" src="./assets/postcss-logo.svg"/>
+    <img width="55" src="./assets/ESLint-logo.svg"/>
+    <img width="55" src="./assets/github-logo.svg"/>
+    <img width="55" src="./assets/node-logo.svg"/>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Deployment
+I used the beta of [Github Actions](https://docs.github.com/en/actions) to deploy my site automatically to github pages and generate the static site. This workflow proved to be extremly convienent and is something I will likely implement in the future. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running Locally
+Its extremly simple to build and run locally. Simply clone and then run:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```npm install```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```npm run dev```
 
-## Learn More
+## Notes
+I prioritized as little reloads as possible for the website as I did not see a reason to encourage users to refresh their page often instead opting to simply fetch the data from the github api and refresh the page directly. This made for a much snappier experience. I experiemented with SEO by adding a `sitemap.xml` and `robots.txt` and while these are unecessary for such a small website I saw no reason not to add them.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Special Mentions
+- [CodeHS](https://codehs.com/) for providing free classes that are amazing to any prospective computer science student.
+- [Favicon](https://www.flaticon.com/free-icons/code) by Smashicons
