@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Wave from "@/components/Wave";
+import PageTransition from '@/components/PageTransition';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +15,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className="relative h-screen">
+        <Wave
+          stretch={3}
+          fill="#a036c2"
+          animationDuration={15}
+          numberOfWaves={4}
+          minHeight={500}
+          maxHeight={3000}
+          className="w-screen h-screen absolute left-0 bottom-0 overflow-hidden -z-10"
+        />
+        <PageTransition>
+          <main className="h-full overflow-auto">
+            <div className="h-screen w-screen bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+              {children}
+            </div>
+          </main>
+        </PageTransition>
+      </body>
     </html>
   );
 }
