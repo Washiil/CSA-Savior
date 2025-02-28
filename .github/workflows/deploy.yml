@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ gh-pages ]
+    branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -36,31 +36,24 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       
-      - name: Configure Next.js for Static Export
+      - name: Update next.config.js
         run: |
-          # Create or update next.config.js to include output: 'export'
           if [ -f "next.config.js" ]; then
-            # Backup original config
             cp next.config.js next.config.js.bak
-            
-            # Check if output: 'export' is already configured
             if ! grep -q "output: 'export'" next.config.js; then
-              # Add output: 'export' to the existing config
               sed -i "s/module.exports = {/module.exports = {\n  output: 'export',/" next.config.js
             fi
           else
-            # Create a new config file
             echo "/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  // For GitHub Pages, set the base path to your repo name if it's not publishing to a custom domain
-  basePath: process.env.GITHUB_REPOSITORY ? \`/\${process.env.GITHUB_REPOSITORY.split('/')[1]}\` : '',
-  images: {
-    unoptimized: true,
-  },
-};
-
-module.exports = nextConfig;" > next.config.js
+            const nextConfig = {
+              output: 'export',
+              basePath: process.env.GITHUB_REPOSITORY ? \`/\${process.env.GITHUB_REPOSITORY.split('/')[1]}\` : '',
+              images: {
+                unoptimized: true,
+              },
+            };
+            
+            module.exports = nextConfig;" > next.config.js
           fi
       
       - name: Build Next.js app
