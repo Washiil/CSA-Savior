@@ -1,11 +1,6 @@
-# CSA-Savior - [NEW WEBSITE](https://washiil.github.io/CSA-Savior/)
-Collection of [CodeHS](https://codehs.com) / CSA answers and guides
+# [CSA-Savior - Web](https://washiil.github.io/CSA-Savior/)
 
-~~This repository is now archived as of 01-07-2023. If this repository helps you out please leave a star.~~
-
-> All code in repository passes required test cases before being uploaded. Try to understand the answers rather than just copy and I'm happy to explain anything!
-
- ~ Washi._
+Collection of [CodeHS](https://codehs.com) / CSA answers and guides. If you are interested in how I created the web application please checkout my other [branch](https://github.com/Washiil/CSA-Savior/tree/gh-pages). Additionally, if this repository hleped you out please leave a star to help me out! 
 
 # Navigation
 
