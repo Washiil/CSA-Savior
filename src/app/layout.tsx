@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Wave from "@/components/Wave";
 import PageTransition from "@/components/PageTransition";
 import "./globals.css";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "CSA-Savior",
@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="relative h-screen">
         <GoogleTagManager gtmId="GTM-K64X95SQ"/>
+        <GoogleAnalytics gaId="G-9LPJFV4ZCX"/>
         <Wave
           stretch={3}
           fill="#a036c2"
