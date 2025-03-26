@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
   return (
