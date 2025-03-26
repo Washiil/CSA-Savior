@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative h-screen">
-        <GoogleTagManager gtmId="G-9LPJFV4ZCX"/>
+        <GoogleTagManager gtmId="GTM-K64X95SQ"/>
         <Wave
           stretch={3}
           fill="#a036c2"
