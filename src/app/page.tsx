@@ -1,5 +1,3 @@
-'use client'
-
 import Link from "next/link";
 import { sendGTMEvent } from "@next/third-parties/google";
 
@@ -23,14 +21,14 @@ export default function Home() {
           <div className="flex space-x-6 justify-between sm:justify-start">
             <Link
               href="https://github.com/Washiil/CSA-Savior"
-              onClick={() => sendGTMEvent({ event_type: 'buttonClicked', value: 'starView' })}
+              // onClick={() => sendGTMEvent({ event_type: 'buttonClicked', value: 'starView' })}
               className="transition-all duration-700 outline-1 outline outline-black bg-white text-black rounded-2xl text-md py-2 px-4 hover:scale-[115%]"
             >
               Star ⭐
             </Link>
             <Link
               href="https://washi-dev.vercel.app/projects"
-              onClick={() => sendGTMEvent({ event_type: 'buttonClicked', value: 'projectsView' })}
+              // onClick={() => sendGTMEvent({ event_type: 'buttonClicked', value: 'projectsView' })}
               className="transition-all duration-700 outline-1 outline outline-black bg-white text-black rounded-2xl text-md py-2 px-4 hover:scale-[115%]"
             >
               Projects
