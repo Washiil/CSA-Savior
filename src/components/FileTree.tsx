@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRepo } from "@/context/RepoContext";
 import { fetchFileContent } from "@/lib/githubAPI";
 import { FileEntry } from "@/types/GithubCTX";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function FileTree() {
   const { fileStructure, setCurrentFile } = useRepo();
@@ -44,6 +45,7 @@ export default function FileTree() {
         path: file.path,
         content,
       });
+      sendGTMEvent({ event_type: 'buttonClicked', value: 'fileView'})
     } catch (error) {
       console.error("Error loading file:", error);
     }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Wave from "@/components/Wave";
 import PageTransition from "@/components/PageTransition";
+import { GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative h-screen">
+        <GoogleTagManager gtmId="G-9LPJFV4ZCX"/>
         <Wave
           stretch={3}
           fill="#a036c2"
