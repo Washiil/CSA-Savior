@@ -45,7 +45,7 @@ export default function FileTree() {
         path: file.path,
         content,
       });
-      sendGTMEvent({ event_type: 'buttonClicked', value: 'fileView'})
+      sendGTMEvent({ event: 'buttonClicked', value: 'fileView'})
     } catch (error) {
       console.error("Error loading file:", error);
     }

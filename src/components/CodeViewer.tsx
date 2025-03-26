@@ -37,7 +37,7 @@ export default function CodeViewer() {
     try {
       await navigator.clipboard.writeText(currentFile.content);
       setCopied(true);
-      sendGTMEvent({ event_type: 'buttonClicked', value: 'fileCopy', path: currentFile.path})
+      sendGTMEvent({ event: 'buttonClicked', value: 'fileCopy', path: currentFile.path})
     } catch (error) {
       console.error("Unable to copy text to clipboard:", error);
     }
