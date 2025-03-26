@@ -1,10 +1,8 @@
 "use client";
-
 import { useRepo } from "@/context/RepoContext";
 import { useState, useEffect } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function CodeViewer() {
   const { currentFile } = useRepo();
@@ -38,7 +36,6 @@ export default function CodeViewer() {
     try {
       await navigator.clipboard.writeText(currentFile.content);
       setCopied(true);
-      sendGTMEvent({ event_type: 'buttonClicked', value: 'fileCopy', path: currentFile.path})
     } catch (error) {
       console.error("Unable to copy text to clipboard:", error);
     }

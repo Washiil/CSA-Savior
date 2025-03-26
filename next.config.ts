@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx"],
-  output: "export",
   basePath: "/CSA-Savior",
+  output: "export",
   reactStrictMode: true,
 };
 
