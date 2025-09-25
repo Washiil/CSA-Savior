@@ -1,11 +1,14 @@
-# [CSA-Savior - Web](https://washiil.github.io/CSA-Savior/)
+# [🔗 CSA-Savior - Web](https://washiil.github.io/CSA-Savior/)
 
-Collection of [CodeHS](https://codehs.com) / CSA answers and guides. If you are interested in how I created the web application please checkout my other [branch](https://github.com/Washiil/CSA-Savior/tree/gh-pages). Additionally, if this repository hleped you out please leave a star to help me out! 
+Collection of [CodeHS](https://codehs.com) / CSA answers and guides. If you are interested in how I created the web application please checkout my other [branch](https://github.com/Washiil/CSA-Savior/tree/gh-pages). Additionally, if this repository hleped you out please leave a **star ⭐** to help me out! 
+
+[Check out the interactive website!](https://washiil.github.io/CSA-Savior/)
 
 # Navigation
 
 | Units |
 | --- |
+| [Web View (Recommended) ](https://washiil.github.io/CSA-Savior/) |
 | [Unit 1 Primitive Types](https://github.com/Washiil/CSA-Savior/tree/main/Unit%201%20Primitive%20Types) |
 | [Unit 2 Using Objects](https://github.com/Washiil/CSA-Savior/tree/main/Unit%202%20Using%20Objects) |
 | [Unit 3 Boolean Expressions and If Statements](https://github.com/Washiil/CSA-Savior/tree/main/Unit%203%20Boolean%20Expressions%20and%20If%20Statements) |
